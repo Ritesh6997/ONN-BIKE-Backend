@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/Ritesh6997/Ritesh6997-ONN-BIKE-Backend/issues"
   },
-  "homepage": "https://github.com/Ritesh6997/Ritesh6997-ONN-BIKE-Backend#readme"
+  "homepage": "https://github.com/Ritesh6997/Ritesh6997-ONN-BIKE-Backend#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9"
+  }
 }
