@@ -9,11 +9,8 @@ const generateToken = (user) => {
 
 const Signup=async(req,res)=>{
     try {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-          return res.status(400).json({ errors: errors.array() });
-        }
-        let user = User.mongoose.findOne({email:req.body.email});
+        let user =await User.findOne({email:req.body.email});
+        console.log(user)
         if (user){
            return res.status(400).send("email is already exists ")
         }
@@ -22,16 +19,13 @@ const Signup=async(req,res)=>{
         return res.status(200).send({user, token});
 
     } catch (error) {
-       return  res.status(400).send(messeage,error)
+       return  res.status(400).send(error.message)
     }
 }
 
 const login = async (req, res) => {
     try{
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-          return res.status(400).json({ errors: errors.array() });
-        }
+
         const user = await User.findOne({email : req.body.email})
         //checked if mail exists
         if(!user){
@@ -49,6 +43,7 @@ const login = async (req, res) => {
         return res.status(200).send({user, token});
     }
     catch(err){
+        
        return res.status(400).send({message : err.message})
     }
 }
