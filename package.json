@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/Ritesh6997/Ritesh6997-ONN-BIKE-Backend#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "express": "^4.17.3",
     "mongoose": "^6.2.9"
   }
