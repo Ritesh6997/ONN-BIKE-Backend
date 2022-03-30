@@ -4,6 +4,7 @@ const { body, validationResult } = require('express-validator')
 require('dotenv').config()
 
 const generateToken = (user) => {
+    // console.log(process.env.SECRET_KEY)
     return jwt.sign({user}, process.env.SECRET_KEY)
 }
 
@@ -48,7 +49,7 @@ const login = async (req, res) => {
     }
 }
 
-module.exports = {Signup,login}
+module.exports = {Signup,login,generateToken}
 
 
 
