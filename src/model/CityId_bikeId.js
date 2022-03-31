@@ -1,5 +1,8 @@
 const mongoose=require("mongoose");
-const cityId_bikeId=new mongoose.Schema({
+const cityId_bikeIdSchema=new mongoose.Schema({
     bikeId:{type:mongoose.Schema.Types.ObjectId,ref:"product"},
     cityId:{type:mongoose.Schema.Types.ObjectId,ref:"city"}
-})
+});
+
+const CityId_BikeId= mongoose.model("cityId_bikeId",cityId_bikeIdSchema);
+module.exports=CityId_BikeId;
