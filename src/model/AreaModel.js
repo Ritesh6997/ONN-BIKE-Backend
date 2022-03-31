@@ -7,3 +7,7 @@ const areaSchema=new mongoose.Schema({
         ref:"city",
         required:true}
 });
+
+const Area=mongoose.model("area",areaSchema);
+ 
+module.exports=Area;

@@ -1,6 +1,6 @@
 const express=require("express");
 const app=express();
-// const Usercontroller=require("./controllers/usercontroller")
+const Usercontroller=require("./controllers/userController")
 const productController = require("./controllers/productController")
 const SignupController=require("./controllers/SignupController")
 const loginController=require("./controllers/loginController")
@@ -8,8 +8,7 @@ const passport1 = require("./configu/google-oauth")
 
 
 app.use(express.json());
-// app.post("/user",Usercontroller);
-// app.use("/users", userController);
+app.use("/users", Usercontroller);
 app.use("/Signup", SignupController);
 app.use("/login",loginController);
 app.use("/products", productController);
