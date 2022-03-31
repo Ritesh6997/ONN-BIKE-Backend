@@ -11,7 +11,8 @@ const productSchema= new mongoose.Schema({
     count:{type:Number,required:true, default:1},
     minimum_billing:{type:String,required:false,default:"RS 100/4km"},
     type: {type:String,required:true,
-    enum:["Motorcycle","Scooter"]},
+    enum:["MotorCycle","Scooter"]},
+    img:{type:String,required:true}
    
 },
 {
