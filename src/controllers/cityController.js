@@ -1,15 +1,15 @@
 const express = require('express');
 
-const Area = require("../model/AreaModel")
+const City = require("../model/cityModel")
 
 const router=express.Router()
 
 router.post("",async(req,res)=>{
 
     try{
-     const area = await Area.create(req.body)
+     const city = await City.create(req.body)
 
-     return res.status(201).send(area);
+     return res.status(201).send(city);
     }catch(err){
         return res.status(400).send({message:err.message})
     }
