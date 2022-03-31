@@ -28,7 +28,7 @@ passport.use(new GoogleStrategy({
     }
     const token=generateToken(user)
     // console.log(profile)
-    // console.log(user)
+    console.log(user)
     return cb(null, {user,token});
   }
 ));
