@@ -6,6 +6,9 @@ const areaSchema=new mongoose.Schema({
     cityId:{type:mongoose.Schema.Types.ObjectId,
         ref:"city",
         required:true}
+},{
+    versionKey:false,
+    timestamps:true,
 });
 
 const Area=mongoose.model("area",areaSchema);
