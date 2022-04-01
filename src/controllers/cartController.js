@@ -1,7 +1,6 @@
 const express=require("express");
-
 const router=express.Router();
- const Cart=require("../model/cart");
+const Cart=require("../model/cart");
 router.post("",async(req,res)=>{
     try {
         cart=await Cart.create(req.body);
@@ -13,7 +12,7 @@ router.post("",async(req,res)=>{
 
 router.get("/:id",async(req,res)=>{
     try {
-        cart=await Cart.findOne({userId:req.params.id}).populate({
+        const cart=await Cart.findOne({userId:req.params.id}).populate({
             path:"userId",
         }).lean().exec();
         return res.status(201).send(cart);

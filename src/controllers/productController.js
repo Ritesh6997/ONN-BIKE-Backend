@@ -11,7 +11,7 @@ router.post("", async (req, res) => {
         return res.status(400).send({message : err.message});
     }
  
-})
+});
 
 router.get("", async (req, res) => {
     try{
