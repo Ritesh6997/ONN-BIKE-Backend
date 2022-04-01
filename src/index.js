@@ -1,5 +1,7 @@
 const express=require("express");
 const app=express();
+const cors=require("cors");
+app.use(cors());
 const Usercontroller=require("./controllers/userController")
 const productController = require("./controllers/productController")
 const SignupController=require("./controllers/SignupController")
