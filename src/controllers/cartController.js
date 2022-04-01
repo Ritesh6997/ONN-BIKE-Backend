@@ -1,6 +1,9 @@
 const express=require("express");
+
 const router=express.Router();
+
 const Cart=require("../model/cart");
+
 router.post("",async(req,res)=>{
     try {
         cart=await Cart.create(req.body);
@@ -9,6 +12,8 @@ router.post("",async(req,res)=>{
         return res.status(500).send({message:error.message})
     }
 });
+
+
 
 router.get("/:id",async(req,res)=>{
     try {
