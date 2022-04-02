@@ -13,8 +13,6 @@ router.post("",async(req,res)=>{
     }
 });
 
-
-
 router.get("/:id",async(req,res)=>{
     try {
         const cart=await Cart.findOne({userId:req.params.id}).populate({
@@ -25,3 +23,13 @@ router.get("/:id",async(req,res)=>{
         return res.status(500).send({message:error.message})
     }
 });
+
+router.delete("/:id",async(req,res)=>{
+    try {
+        const cart=await Cart.findOneAndDelete({userId:req.params.id}).lean().exec();
+        return res.status(201).send(cart);
+    } catch (error) {
+        return res.status(500).send({message:error.message});
+    }
+})
+module.exports=router;
